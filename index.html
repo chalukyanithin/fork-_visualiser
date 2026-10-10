@@ -130,7 +130,131 @@
       <div class="panel-body source-body">
         <div class="code-editor-wrapper" id="code-container" tabindex="0" aria-label="C Source Code">
           <div class="code-viewport" id="code-viewport">
-            <!-- Populated dynamically by code.js -->
+            <div class="code-line" id="code-line-1" data-line="1">
+              <span class="line-num">1</span>
+              <span class="line-pc-gutter" id="pc-gutter-1"></span>
+              <span class="line-content"><span class="syn-kwd">#include</span><span class="syn-str"> &lt;stdio.h&gt;</span></span>
+            </div>
+            <div class="code-line" id="code-line-2" data-line="2">
+              <span class="line-num">2</span>
+              <span class="line-pc-gutter" id="pc-gutter-2"></span>
+              <span class="line-content"><span class="syn-kwd">#include</span><span class="syn-str"> &lt;unistd.h&gt;</span></span>
+            </div>
+            <div class="code-line" id="code-line-3" data-line="3">
+              <span class="line-num">3</span>
+              <span class="line-pc-gutter" id="pc-gutter-3"></span>
+              <span class="line-content"><span class="syn-kwd">#include</span><span class="syn-str"> &lt;sys/types.h&gt;</span></span>
+            </div>
+            <div class="code-line" id="code-line-4" data-line="4">
+              <span class="line-num">4</span>
+              <span class="line-pc-gutter" id="pc-gutter-4"></span>
+              <span class="line-content"><span class="syn-kwd">#include</span><span class="syn-str"> &lt;sys/wait.h&gt;</span></span>
+            </div>
+            <div class="code-line" id="code-line-5" data-line="5">
+              <span class="line-num">5</span>
+              <span class="line-pc-gutter" id="pc-gutter-5"></span>
+              <span class="line-content"></span>
+            </div>
+            <div class="code-line" id="code-line-6" data-line="6">
+              <span class="line-num">6</span>
+              <span class="line-pc-gutter" id="pc-gutter-6"></span>
+              <span class="line-content"><span class="syn-type">int</span><span> </span><span class="syn-func">main</span><span>(void) {</span></span>
+            </div>
+            <div class="code-line" id="code-line-7" data-line="7">
+              <span class="line-num">7</span>
+              <span class="line-pc-gutter" id="pc-gutter-7"></span>
+              <span class="line-content"><span>    </span><span class="syn-type">int</span><span> counter = </span><span class="syn-num">10</span><span>;</span></span>
+            </div>
+            <div class="code-line" id="code-line-8" data-line="8">
+              <span class="line-num">8</span>
+              <span class="line-pc-gutter" id="pc-gutter-8"></span>
+              <span class="line-content"><span>    </span><span class="syn-func">printf</span><span>(</span><span class="syn-str">"Initial counter: %d\n"</span><span>, counter);</span></span>
+            </div>
+            <div class="code-line" id="code-line-9" data-line="9">
+              <span class="line-num">9</span>
+              <span class="line-pc-gutter" id="pc-gutter-9"></span>
+              <span class="line-content"></span>
+            </div>
+            <div class="code-line active-parent" id="code-line-10" data-line="10">
+              <span class="line-num">10</span>
+              <span class="line-pc-gutter" id="pc-gutter-10"><span class="pc-icon pc-icon-p" title="Parent Instruction Pointer">P</span></span>
+              <span class="line-content"><span>    </span><span class="syn-type">pid_t</span><span> pid = </span><span class="syn-func">fork</span><span>();</span></span>
+            </div>
+            <div class="code-line" id="code-line-11" data-line="11">
+              <span class="line-num">11</span>
+              <span class="line-pc-gutter" id="pc-gutter-11"></span>
+              <span class="line-content"></span>
+            </div>
+            <div class="code-line" id="code-line-12" data-line="12">
+              <span class="line-num">12</span>
+              <span class="line-pc-gutter" id="pc-gutter-12"></span>
+              <span class="line-content"><span>    </span><span class="syn-kwd">if</span><span> (pid &lt; </span><span class="syn-num">0</span><span>) {</span></span>
+            </div>
+            <div class="code-line" id="code-line-13" data-line="13">
+              <span class="line-num">13</span>
+              <span class="line-pc-gutter" id="pc-gutter-13"></span>
+              <span class="line-content"><span>        </span><span class="syn-func">fprintf</span><span>(stderr, </span><span class="syn-str">"fork failed\n"</span><span>);</span></span>
+            </div>
+            <div class="code-line" id="code-line-14" data-line="14">
+              <span class="line-num">14</span>
+              <span class="line-pc-gutter" id="pc-gutter-14"></span>
+              <span class="line-content"><span>        </span><span class="syn-kwd">return</span><span> </span><span class="syn-num">1</span><span>;</span></span>
+            </div>
+            <div class="code-line" id="code-line-15" data-line="15">
+              <span class="line-num">15</span>
+              <span class="line-pc-gutter" id="pc-gutter-15"></span>
+              <span class="line-content"><span>    } </span><span class="syn-kwd">else if</span><span> (pid == </span><span class="syn-num">0</span><span>) {</span></span>
+            </div>
+            <div class="code-line" id="code-line-16" data-line="16">
+              <span class="line-num">16</span>
+              <span class="line-pc-gutter" id="pc-gutter-16"></span>
+              <span class="line-content"><span>        counter += </span><span class="syn-num">5</span><span>;</span></span>
+            </div>
+            <div class="code-line" id="code-line-17" data-line="17">
+              <span class="line-num">17</span>
+              <span class="line-pc-gutter" id="pc-gutter-17"></span>
+              <span class="line-content"><span>        </span><span class="syn-func">printf</span><span>(</span><span class="syn-str">"Child  [PID %d]: counter = %d\n"</span><span>, </span><span class="syn-func">getpid</span><span>(), counter);</span></span>
+            </div>
+            <div class="code-line" id="code-line-18" data-line="18">
+              <span class="line-num">18</span>
+              <span class="line-pc-gutter" id="pc-gutter-18"></span>
+              <span class="line-content"><span>        </span><span class="syn-kwd">return</span><span> </span><span class="syn-num">0</span><span>;</span></span>
+            </div>
+            <div class="code-line" id="code-line-19" data-line="19">
+              <span class="line-num">19</span>
+              <span class="line-pc-gutter" id="pc-gutter-19"></span>
+              <span class="line-content"><span>    } </span><span class="syn-kwd">else</span><span> {</span></span>
+            </div>
+            <div class="code-line" id="code-line-20" data-line="20">
+              <span class="line-num">20</span>
+              <span class="line-pc-gutter" id="pc-gutter-20"></span>
+              <span class="line-content"><span>        counter += </span><span class="syn-num">100</span><span>;</span></span>
+            </div>
+            <div class="code-line" id="code-line-21" data-line="21">
+              <span class="line-num">21</span>
+              <span class="line-pc-gutter" id="pc-gutter-21"></span>
+              <span class="line-content"><span>        </span><span class="syn-func">printf</span><span>(</span><span class="syn-str">"Parent [PID %d]: counter = %d\n"</span><span>, </span><span class="syn-func">getpid</span><span>(), counter);</span></span>
+            </div>
+            <div class="code-line" id="code-line-22" data-line="22">
+              <span class="line-num">22</span>
+              <span class="line-pc-gutter" id="pc-gutter-22"></span>
+              <span class="line-content"><span>        </span><span class="syn-func">wait</span><span>(NULL);</span></span>
+            </div>
+            <div class="code-line" id="code-line-23" data-line="23">
+              <span class="line-num">23</span>
+              <span class="line-pc-gutter" id="pc-gutter-23"></span>
+              <span class="line-content"><span>        </span><span class="syn-kwd">return</span><span> </span><span class="syn-num">0</span><span>;</span></span>
+            </div>
+            <div class="code-line" id="code-line-24" data-line="24">
+              <span class="line-num">24</span>
+              <span class="line-pc-gutter" id="pc-gutter-24"></span>
+              <span class="line-content"><span>    }</span></span>
+            </div>
+            <div class="code-line" id="code-line-25" data-line="25">
+              <span class="line-num">25</span>
+              <span class="line-pc-gutter" id="pc-gutter-25"></span>
+              <span class="line-content"><span>}</span></span>
+            </div>
           </div>
         </div>
 
@@ -499,6 +623,6 @@
 
   </main>
 
-  <script type="module" src="js/app.js"></script>
+  <script src="js/bundle.js"></script>
 </body>
 </html>
